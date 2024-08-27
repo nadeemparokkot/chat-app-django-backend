@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework.authtoken',
     'channels',
     'accounts'
 
@@ -57,6 +58,12 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'ex2chatappreact.urls'
 
 AUTH_USER_MODEL="accounts.User"
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'accounts.tokenauthentication.JWTAuthentication'
+    ],
+}
 
 TEMPLATES = [
     {
