@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'rest_framework.authtoken',
+    'corsheaders', #  for django-cors-headers to fetch react frontend 
     'channels',
     'accounts'
 
@@ -48,11 +48,17 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware", #  for django-cors-headers to fetch react frontend 
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+]
+
+CORS_ALLOWED_ORIGINS = [ #  for django-cors-headers to fetch react frontend 
+    "http://localhost:3000"
 ]
 
 ROOT_URLCONF = 'ex2chatappreact.urls'
