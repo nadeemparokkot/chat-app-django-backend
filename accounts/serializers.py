@@ -17,3 +17,5 @@ class UserSerializer(serializers.ModelSerializer):
         model=get_user_model()
         fields=('id','email','password','first_name','last_name')
         extra_kwargs={'password':{'write_only':True}}  #password field is not visible in the response 
+
+        
